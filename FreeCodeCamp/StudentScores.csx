@@ -1,9 +1,9 @@
 Dictionary<string, decimal> getAverageScores()
 {
-    int[] sophia = { 93, 87, 98, 95, 100 };
-    int[] nicolas = { 80, 83, 82, 88, 85 };
-    int[] zahirah = { 84, 96, 73, 85, 79 };
-    int[] jeong = { 93, 92, 98, 100, 97 };
+    int[] sophia = [ 93, 87, 98, 95, 100 ];
+    int[] nicolas = [ 80, 83, 82, 88, 85 ];
+    int[] zahirah = [ 84, 96, 73, 85, 79 ];
+    int[] jeong = [ 93, 92, 98, 100, 97 ];
 
     Dictionary<string, decimal> studentsAvgScores = new Dictionary<string, decimal>();
 
