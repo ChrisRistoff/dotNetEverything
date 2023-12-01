@@ -39,7 +39,7 @@ public class LinkedList<T>
         Length++;
     }
 
-    public void PrintList()
+    public string PrintList()
     {
         var curr = this.Head;
         T[] arr = {};
@@ -52,6 +52,6 @@ public class LinkedList<T>
         }
 
         string res = String.Join(", ", arr);
-        System.Console.WriteLine(res);
+        return res;
     }
 }
