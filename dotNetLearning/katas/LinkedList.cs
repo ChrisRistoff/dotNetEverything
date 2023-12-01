@@ -22,6 +22,22 @@ public class LinkedList<T>
         Tail = null;
     }
 
+    public string PrintList()
+    {
+        var curr = this.Head;
+        T[] arr = { };
+
+        while (curr != null)
+        {
+            Array.Resize(ref arr, arr.Length + 1);
+            arr[arr.Length - 1] = curr.Data;
+            curr = curr.Next;
+        }
+
+        string res = String.Join(", ", arr);
+        return res;
+    }
+
     public void Append(T data)
     {
         Node<T> newNode = new Node<T>(data);
@@ -39,19 +55,23 @@ public class LinkedList<T>
         Length++;
     }
 
-    public string PrintList()
+    public void AppendLeft(T data)
     {
-        var curr = this.Head;
-        T[] arr = {};
 
-        while(curr != null)
+        Node<T> newNode = new Node<T>(data);
+
+        if (Head == null)
         {
-            Array.Resize(ref arr, arr.Length + 1);
-            arr[arr.Length-1] = curr.Data;
-            curr = curr.Next;
+            Head = newNode;
+            Tail = newNode;
+        }
+        else
+        {
+            newNode.Next = Head;
+            Head = newNode;
         }
 
-        string res = String.Join(", ", arr);
-        return res;
+        Length++;
     }
+
 }
