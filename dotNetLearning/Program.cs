@@ -3,7 +3,7 @@ class Program
 
     static void Main(string[] args)
     {
-        CheckPali();
+        AdventDay1();
     }
 
     static void testLinkedList()
@@ -40,7 +40,7 @@ class Program
 
     static void CheckPali()
     {
-        var word1 = new Palindrome("racecar");
+        var word1 = new Palindrome("r");
         System.Console.WriteLine(word1.CheckPali());
         var word2 = new Palindrome("racecars");
         System.Console.WriteLine(word2.CheckPali());
@@ -49,4 +49,13 @@ class Program
         System.Console.WriteLine(sentence.CheckPali());
     }
 
+    static void AdventDay1()
+    {
+        var advent = new AdventDayOne();
+
+        string[] data = advent.GetData();
+        System.Console.WriteLine(String.Join(", ", data));
+        advent.GetSum(data);
+
+    }
 }

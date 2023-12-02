@@ -22,12 +22,11 @@ public class Palindrome
 
         this.String = this.String.ToLower();
 
-        System.Console.WriteLine(this.String);
-        string reversed = "";
+        string reversed = new String("");
 
         for (int i = this.String.Length-1; i >= 0 ; i--)
         {
-            reversed += String[i];
+            reversed += this.String[i];
         }
 
         return this.String == reversed;
