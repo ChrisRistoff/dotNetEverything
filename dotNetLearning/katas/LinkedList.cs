@@ -53,6 +53,7 @@ public class LinkedList<T>
         }
 
         Length++;
+        return;
     }
 
     public void AppendLeft(T data)
@@ -72,6 +73,28 @@ public class LinkedList<T>
         }
 
         Length++;
+
+        return;
     }
 
+    public T Pop()
+    {
+        if (Head != null) {
+            T popped = Tail!.Data;
+            Node<T> curr = Head;
+
+            for (int i = 2; i < Length; i++)
+            {
+                curr = curr.Next!;
+            }
+
+            curr.Next = null;
+            Tail = curr;
+            Length--;
+
+            return popped;
+        }
+
+        return Head!.Data;
+    }
 }

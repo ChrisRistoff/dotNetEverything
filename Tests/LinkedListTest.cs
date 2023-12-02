@@ -31,4 +31,22 @@ public class LinkedListMethods
         Assert.Equal(3, linkedList.Tail!.Data);
         Assert.Equal("1, 2, 3", list);
     }
+
+    [Fact]
+    public void Pop()
+    {
+        var linkedList = new LinkedList<int>();
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+        linkedList.Append(4);
+        var list = linkedList.PrintList();
+
+        Assert.Equal("1, 2, 3, 4", list);
+        Assert.Equal(4, linkedList.Pop());
+        Assert.Equal(3, linkedList.Pop());
+        Assert.Equal(1, linkedList.Head?.Data);
+        Assert.Equal(2, linkedList.Tail?.Data);
+        Assert.Equal("1, 2", linkedList.PrintList());
+    }
 }
