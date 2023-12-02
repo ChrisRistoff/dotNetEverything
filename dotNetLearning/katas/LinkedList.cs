@@ -25,7 +25,7 @@ public class LinkedList<T>
     public string PrintList()
     {
         var curr = this.Head;
-        T[] arr = { };
+        T[] arr = {};
 
         while (curr != null)
         {
@@ -91,6 +91,7 @@ public class LinkedList<T>
             popped = Head!.Data;
             Head = null;
             Tail = null;
+            Length--;
 
             return popped;
         }
@@ -122,11 +123,13 @@ public class LinkedList<T>
             popped = Head!.Data;
             Head = null;
             Tail = null;
+            Length--;
             return popped;
         }
 
         popped = Head!.Data;
         Head = Head.Next;
+        Length--;
 
         return popped;
     }
@@ -144,5 +147,25 @@ public class LinkedList<T>
         }
 
         return curr.Data;
+    }
+
+    public T[] ToArray()
+    {
+        T[] result = new T[Length];
+
+        if (Length == 0)
+        {
+            throw new InvalidOperationException("List is empty");
+        }
+
+        Node<T> curr = Head!;
+
+        for (int i = 0; i < Length; i++)
+        {
+            result[i] = curr.Data;
+            curr = curr.Next!;
+        }
+
+        return result;
     }
 }

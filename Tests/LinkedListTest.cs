@@ -51,17 +51,20 @@ public class LinkedListMethods
         Assert.Equal(1, linkedList.Head?.Data);
         Assert.Equal(2, linkedList.Tail?.Data);
         Assert.Equal("1, 2", linkedList.PrintList());
+        Assert.Equal(2, linkedList.Length);
 
         // check if both head and tail get updated when only one item is left
         Assert.Equal(2, linkedList.Pop());
         Assert.Equal(1, linkedList.Head!.Data);
         Assert.Equal(1, linkedList.Tail!.Data);
+        Assert.Equal(1, linkedList.Length);
 
         // check if last item is being properly removed
         Assert.Equal(1, linkedList.Pop());
         Assert.Null(linkedList.Tail);
         Assert.Null(linkedList.Head);
 
+        Assert.Equal(0, linkedList.Length);
         Assert.Throws<InvalidOperationException>(() => linkedList.Pop());
     }
 
@@ -80,16 +83,19 @@ public class LinkedListMethods
         Assert.Equal(4, linkedList.Tail?.Data);
         Assert.Equal(3, linkedList.Head?.Data);
         Assert.Equal("3, 4", linkedList.PrintList());
+        Assert.Equal(2, linkedList.Length);
 
         // check if both head and tail get updated when only one item is left
         Assert.Equal(3, linkedList.PopLeft());
         Assert.Equal(4, linkedList.Head!.Data);
         Assert.Equal(4, linkedList.Tail!.Data);
+        Assert.Equal(1, linkedList.Length);
 
         // check if last item is being properly removed
         Assert.Equal(4, linkedList.Pop());
         Assert.Null(linkedList.Tail);
         Assert.Null(linkedList.Head);
+        Assert.Equal(0, linkedList.Length);
 
         Assert.Throws<InvalidOperationException>(() => linkedList.Pop());
     }
@@ -126,5 +132,30 @@ public class LinkedListMethods
 
         Assert.Equal(1, linkedList.GetByIndex(0));
         Assert.Throws<InvalidOperationException>(() => linkedList.GetByIndex(3));
+    }
+
+    [Fact]
+    public void ToArray_ReturnsAnArrayWithValuesFromTheList()
+    {
+        var linkedList = new LinkedList<int>();
+
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+        linkedList.Append(4);
+
+        int[] arr = linkedList.ToArray();
+        Assert.Equal("1, 2, 3, 4", String.Join(", ", arr));
+        Assert.Equal(1, arr[0]);
+        Assert.Equal(2, arr[1]);
+        Assert.Equal(3, arr[2]);
+        Assert.Equal(4, arr[3]);
+    }
+
+    [Fact]
+    public void ToArray_ThrowsAnErrorWhenListIsEmpty()
+    {
+        var linkedList = new LinkedList<int>();
+        Assert.Throws<InvalidOperationException>(() => linkedList.ToArray());
     }
 }
