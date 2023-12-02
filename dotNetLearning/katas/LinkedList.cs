@@ -97,4 +97,16 @@ public class LinkedList<T>
 
         return Head!.Data;
     }
+
+    public object GetByIndex(int index)
+    {
+        if (index >= Length) return false;
+        Node<T> curr = this.Head!;
+        for (int i = 0; i < index ; i++)
+        {
+            curr = curr.Next!;
+        }
+
+        return curr.Data!;
+    }
 }

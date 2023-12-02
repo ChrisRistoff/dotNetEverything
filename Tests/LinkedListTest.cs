@@ -49,4 +49,21 @@ public class LinkedListMethods
         Assert.Equal(2, linkedList.Tail?.Data);
         Assert.Equal("1, 2", linkedList.PrintList());
     }
+
+    [Fact]
+    public void GetByIndex()
+    {
+        var linkedList = new LinkedList<int>();
+
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+        linkedList.Append(4);
+
+        Assert.Equal(1, linkedList.GetByIndex(0));
+        Assert.Equal(2, linkedList.GetByIndex(1));
+        Assert.Equal(3, linkedList.GetByIndex(2));
+        Assert.Equal(4, linkedList.GetByIndex(3));
+
+    }
 }

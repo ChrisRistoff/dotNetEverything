@@ -16,12 +16,10 @@ class Program
         newList.Append(34);
         newList.Append(47);
         System.Console.WriteLine(newList.PrintList());
-        System.Console.WriteLine(newList.Pop());
-        System.Console.WriteLine(newList.Pop());
-        System.Console.WriteLine(newList.Pop());
-        System.Console.WriteLine(newList.PrintList());
-        System.Console.WriteLine(newList.Head!.Data + " <-- HEAD");
-        System.Console.WriteLine(newList.Tail!.Data + " < -- TAIL");
+        System.Console.WriteLine(newList.GetByIndex(0));
+        System.Console.WriteLine(newList.GetByIndex(1));
+        System.Console.WriteLine(newList.GetByIndex(2));
+        System.Console.WriteLine(newList.GetByIndex(3));
     }
 
 }
