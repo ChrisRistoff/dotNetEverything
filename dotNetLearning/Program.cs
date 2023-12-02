@@ -3,7 +3,7 @@ class Program
 
     static void Main(string[] args)
     {
-        playWithMap();
+        playFB();
     }
 
     static void testLinkedList()
@@ -30,5 +30,11 @@ class Program
         map.Set("key3", "val3");
 
         System.Console.WriteLine(map.PrintMap());
+    }
+
+    static void playFB()
+    {
+        var game = new FizzBuzz(40, 3, 5);
+        game.PlayGame();
     }
 }
