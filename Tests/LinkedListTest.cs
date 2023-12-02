@@ -5,7 +5,7 @@ public class LinkedListMethods
 {
 
     [Fact]
-    public void AppendList()
+    public void AppendList_AppendsAnItemToTheList()
     {
         var linkedList = new LinkedList<int>();
         linkedList.Append(1);
@@ -19,7 +19,7 @@ public class LinkedListMethods
     }
 
     [Fact]
-    public void AppendLeft()
+    public void AppendLeft_AppendsAnItemToTheListLeft()
     {
         var linkedList = new LinkedList<int>();
         linkedList.AppendLeft(3);
@@ -33,8 +33,9 @@ public class LinkedListMethods
     }
 
     [Fact]
-    public void Pop()
+    public void Pop_RemovesLastItemOfListAndReturnAsValue()
     {
+        // create linkedList
         var linkedList = new LinkedList<int>();
         linkedList.Append(1);
         linkedList.Append(2);
@@ -43,15 +44,29 @@ public class LinkedListMethods
         var list = linkedList.PrintList();
 
         Assert.Equal("1, 2, 3, 4", list);
+
+
         Assert.Equal(4, linkedList.Pop());
         Assert.Equal(3, linkedList.Pop());
         Assert.Equal(1, linkedList.Head?.Data);
         Assert.Equal(2, linkedList.Tail?.Data);
         Assert.Equal("1, 2", linkedList.PrintList());
+
+        // check if both head and tail get updated when only one item is left
+        Assert.Equal(2, linkedList.Pop());
+        Assert.Equal(1, linkedList.Head!.Data);
+        Assert.Equal(1, linkedList.Tail!.Data);
+
+        // check if last item is being properly removed
+        Assert.Equal(1, linkedList.Pop());
+        Assert.Null(linkedList.Tail);
+        Assert.Null(linkedList.Head);
+
+        Assert.Throws<InvalidOperationException>(() => linkedList.Pop());
     }
 
     [Fact]
-    public void GetByIndex()
+    public void GetByIndex_RetrievesValueOfItemAtAGivenIndex()
     {
         var linkedList = new LinkedList<int>();
 
@@ -65,5 +80,21 @@ public class LinkedListMethods
         Assert.Equal(3, linkedList.GetByIndex(2));
         Assert.Equal(4, linkedList.GetByIndex(3));
 
+    }
+
+    [Fact]
+    public void GetByIndex_ThrowsErrorWhenListIsEmpty_IndexIsOutOfRange()
+    {
+        var linkedList = new LinkedList<int>();
+
+        Assert.Throws<InvalidOperationException>(() => linkedList.GetByIndex(0));
+        Assert.Throws<InvalidOperationException>(() => linkedList.GetByIndex(3));
+
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+
+        Assert.Equal(1, linkedList.GetByIndex(0));
+        Assert.Throws<InvalidOperationException>(() => linkedList.GetByIndex(3));
     }
 }
