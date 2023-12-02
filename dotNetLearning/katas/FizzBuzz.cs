@@ -14,10 +14,19 @@ public class FizzBuzz
             throw new InvalidOperationException("Must be postiive integers");
         }
 
+        Type firstWordType = firstWord.GetType();
+        Type secondWordType = secondWord.GetType();
+
+        if (firstWordType != (typeof(string)) && secondWordType != (typeof(string)))
+        {
+            throw new InvalidOperationException("Must be strings");
+        }
+
         this.Len = maxLen;
         this.Fizz = first;
         this.Buzz = second;
         this.FirstWord = firstWord;
+        this.SecondWord = secondWord;
     }
 
     public void PlayGame()
@@ -29,28 +38,28 @@ public class FizzBuzz
             string curr = "";
             if (i % this.Fizz == 0)
             {
-                curr += "Fizz";
+                curr += this.FirstWord;
             }
 
             if (i % this.Buzz == 0)
             {
-                curr += "Buzz";
+                curr += this.SecondWord;
             }
 
             if (curr == "")
             {
-                System.Console.WriteLine(i);
+                System.Console.WriteLine("--------" + i);
             }
 
             else
             {
-                System.Console.WriteLine(curr);
+                System.Console.WriteLine(curr + $"<<< ({i})");
                 count++;
             }
 
         }
 
-        System.Console.WriteLine(count);
+        System.Console.WriteLine(count + " <<<<<< Total words");
     }
 
 }

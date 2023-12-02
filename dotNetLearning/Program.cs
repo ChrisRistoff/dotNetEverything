@@ -34,7 +34,7 @@ class Program
 
     static void playFB()
     {
-        var game = new FizzBuzz(40, 3, 5);
+        var game = new FizzBuzz(40, 3, 5, "Bazz", "Jazz");
         game.PlayGame();
     }
 }
