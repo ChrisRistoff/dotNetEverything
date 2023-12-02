@@ -3,7 +3,7 @@ class Program
 
     static void Main(string[] args)
     {
-        testLinkedList();
+        playWithMap();
     }
 
     static void testLinkedList()
@@ -22,4 +22,13 @@ class Program
         System.Console.WriteLine(newList.GetByIndex(3));
     }
 
+    static void playWithMap()
+    {
+        var map = new HashMap(30);
+        map.Set("key1", "val1");
+        map.Set("key2", "val2");
+        map.Set("key3", "val3");
+
+        System.Console.WriteLine(map.PrintMap());
+    }
 }
