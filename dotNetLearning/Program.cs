@@ -3,7 +3,7 @@ class Program
 
     static void Main(string[] args)
     {
-        playFB();
+        CheckPali();
     }
 
     static void testLinkedList()
@@ -37,4 +37,16 @@ class Program
         var game = new FizzBuzz(40, 3, 5, "Bazz", "Jazz");
         game.PlayGame();
     }
+
+    static void CheckPali()
+    {
+        var word1 = new Palindrome("racecar");
+        System.Console.WriteLine(word1.CheckPali());
+        var word2 = new Palindrome("racecars");
+        System.Console.WriteLine(word2.CheckPali());
+
+        var sentence = new Palindrome("A man, a plan, a canal, Panama???");
+        System.Console.WriteLine(sentence.CheckPali());
+    }
+
 }
