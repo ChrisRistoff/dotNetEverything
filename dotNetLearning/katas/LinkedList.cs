@@ -79,13 +79,15 @@ public class LinkedList<T>
 
     public T Pop()
     {
-        if(Head == null && Tail == null) {
+        if (Head == null && Tail == null)
+        {
             throw new InvalidOperationException("List is empty");
         }
 
         T popped;
 
-        if (Head == Tail) {
+        if (Head == Tail)
+        {
             popped = Head!.Data;
             Head = null;
             Tail = null;
@@ -107,9 +109,32 @@ public class LinkedList<T>
         return popped;
     }
 
+    public T PopLeft()
+    {
+        if (Head == null && Tail == null)
+        {
+            throw new InvalidOperationException("List is empty");
+        }
+
+        T popped;
+
+        if (Head == Tail) {
+            popped = Head!.Data;
+            Head = null;
+            Tail = null;
+            return popped;
+        }
+
+        popped = Head!.Data;
+        Head = Head.Next;
+
+        return popped;
+    }
+
     public T GetByIndex(int index)
     {
-        if (index >= Length || Length == 0) {
+        if (index >= Length || Length == 0)
+        {
             throw new InvalidOperationException("Index out of range");
         }
         Node<T> curr = Head!;
