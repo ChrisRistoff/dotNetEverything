@@ -54,8 +54,6 @@ class Program
         var advent = new AdventDayOne();
 
         string[] data = advent.GetData();
-        System.Console.WriteLine(String.Join(", ", data));
-        advent.GetSum(data);
-
+        advent.GetSumWithStrings(data);
     }
 }
