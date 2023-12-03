@@ -1,5 +1,3 @@
-using System.Text.RegularExpressions;
-
 public class AdventDayOne
 {
 
@@ -18,7 +16,6 @@ public class AdventDayOne
             for (int i = 0; i < len; i++)
             {
                 lastItemRemoved[i] = result[i];
-                System.Console.WriteLine(lastItemRemoved[i]);
             }
         }
         catch (IOException e)

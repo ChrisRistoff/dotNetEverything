@@ -3,7 +3,7 @@ class Program
 
     static void Main(string[] args)
     {
-        AdventDay1();
+        AdventDay2();
     }
 
     static void testLinkedList()
@@ -55,5 +55,13 @@ class Program
 
         string[] data = advent.GetData();
         advent.GetSumWithStrings(data);
+    }
+
+    static void AdventDay2()
+    {
+        var advent = new AdventDayTwo();
+        string[] data = advent.GetData();
+        // advent.GetPossibleGames(data);
+        advent.GetMinCubes(data);
     }
 }
