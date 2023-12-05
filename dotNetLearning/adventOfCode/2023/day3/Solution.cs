@@ -1,6 +1,5 @@
 public class AdventDayThree
 {
-
     public string[] GetData()
     {
         string filepath = "./adventOfCode/2023/day3/testData.txt";
@@ -26,6 +25,7 @@ public class AdventDayThree
 
         return lastRemoved;
     }
+
     public void GetSum(string[] data)
     {
         int sum = 0;
@@ -41,12 +41,6 @@ public class AdventDayThree
                 }
                 else
                 {
-                    if (!string.IsNullOrEmpty(currNum))
-                    {
-                        sum += int.Parse(currNum);
-                        currNum = "";
-                    }
-
                     if (currLine[j] == '.' && !string.IsNullOrEmpty(currNum))
                     {
                         int prevLine = i - 1;
@@ -54,9 +48,12 @@ public class AdventDayThree
                         if (prevLine < 0) prevLine = 0;
                         if (nextLine >= data.Length) nextLine = i;
 
-                        for (int k = j; k < currLine.Length && k < data[prevLine].Length && k < data[nextLine].Length; k++)
+                        for (int k = j- currNum.Length; k <= j; k++)
                         {
-                            if (data[prevLine][k] != '.' || data[nextLine][k] != '.')
+                            char prev = data[prevLine][k];
+                            char next= data[nextLine][k];
+                            char curr = data[i][k];
+                            if ((prev != '.' && !char.IsDigit(prev)) || (next != '.' && !char.IsDigit(next)) || (curr != '.' && !char.IsDigit(curr)))
                             {
                                 sum += int.Parse(currNum);
                                 currNum = "";
@@ -65,11 +62,6 @@ public class AdventDayThree
                         }
                     }
                 }
-            }
-
-            if (!string.IsNullOrEmpty(currNum))
-            {
-                sum += int.Parse(currNum);
             }
         }
 
