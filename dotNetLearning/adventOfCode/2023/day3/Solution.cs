@@ -2,7 +2,7 @@ public class AdventDayThree
 {
     public string[] GetData()
     {
-        string filepath = "./adventOfCode/2023/day3/data.txt";
+        string filepath = "./adventOfCode/2023/day3/testData.txt";
         string[] result = {};
         string[] lastRemoved = {};
 
@@ -38,6 +38,28 @@ public class AdventDayThree
                 if (char.IsDigit(currLine[j]))
                 {
                     currNum += currLine[j];
+                    if (i == currLine.Length)
+                    {
+                        bool isAdjacentToSymbol = false;
+                        int numStart = currLine.Length - currNum.Length;
+                        int numEnd = currLine.Length - 1;
+
+                        // Check in the current, previous, and next lines
+                        for (int k = numStart; k <= numEnd; k++)
+                        {
+                            if (IsAdjacentToSymbol(data, i, k))
+                            {
+                                isAdjacentToSymbol = true;
+                                break;
+                            }
+                        }
+
+                        if (isAdjacentToSymbol)
+                        {
+                            sum += int.Parse(currNum);
+                        }
+                        currNum = "";
+                    }
                 }
                 else
                 {
@@ -99,7 +121,15 @@ public class AdventDayThree
             for (int j = -1; j <= 1; j++)
             {
                 int checkIndex = index + j;
-                if (checkIndex < 0 || checkIndex >= data[checkLine].Length) continue;
+                if (checkIndex < 0)
+                {
+                    checkIndex = 0;
+                }
+
+                if (checkIndex >= data[checkLine].Length)
+                {
+                    checkIndex = data[checkLine].Length-1;
+                }
 
                 char checkChar = data[checkLine][checkIndex];
                 if (symbols.Contains(checkChar))
