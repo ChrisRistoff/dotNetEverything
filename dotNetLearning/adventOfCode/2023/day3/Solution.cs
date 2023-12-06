@@ -2,7 +2,7 @@ public class AdventDayThree
 {
     public string[] GetData()
     {
-        string filepath = "./adventOfCode/2023/day3/testData.txt";
+        string filepath = "./adventOfCode/2023/day3/data.txt";
         string[] result = {};
         string[] lastRemoved = {};
 
@@ -25,47 +25,78 @@ public class AdventDayThree
 
         return lastRemoved;
     }
-
-    public void GetSum(string[] data)
+public void GetSum(string[] data)
+{
+    int sum = 0;
+    for (int i = 0; i < data.Length; i++)
     {
-        int sum = 0;
-        for (int i = 0; i < data.Length; i++)
+        string currLine = data[i];
+        string currNum = "";
+        for (int j = 0; j < currLine.Length; j++)
         {
-            string currLine = data[i];
-            string currNum = "";
-            for (int j = 0; j < currLine.Length; j++)
+            if (char.IsDigit(currLine[j]))
             {
-                if (char.IsDigit(currLine[j]))
+                currNum += currLine[j];
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(currNum))
                 {
-                    currNum += currLine[j];
-                }
-                else
-                {
-                    if (currLine[j] == '.' && !string.IsNullOrEmpty(currNum))
-                    {
-                        int prevLine = i - 1;
-                        int nextLine = i + 1;
-                        if (prevLine < 0) prevLine = 0;
-                        if (nextLine >= data.Length) nextLine = i;
+                    // Check adjacent symbols for the current number
+                    bool isAdjacentToSymbol = false;
+                    int numStart = j - currNum.Length;
+                    int numEnd = j - 1;
 
-                        for (int k = j- currNum.Length; k <= j; k++)
+                    // Check in the current, previous, and next lines
+                    for (int k = numStart; k <= numEnd; k++)
+                    {
+                        if (IsAdjacentToSymbol(data, i, k))
                         {
-                            char prev = data[prevLine][k];
-                            char next= data[nextLine][k];
-                            char curr = data[i][k];
-                            if ((prev != '.' && !char.IsDigit(prev)) || (next != '.' && !char.IsDigit(next)) || (curr != '.' && !char.IsDigit(curr)))
-                            {
-                                sum += int.Parse(currNum);
-                                currNum = "";
-                                break;
-                            }
+                            isAdjacentToSymbol = true;
+                            break;
                         }
                     }
+
+                    if (isAdjacentToSymbol)
+                    {
+                        sum += int.Parse(currNum);
+                    }
+                    currNum = "";
                 }
             }
         }
-
-        System.Console.WriteLine(sum);
+        // Check for a number at the end of the line
+        if (!string.IsNullOrEmpty(currNum) && IsAdjacentToSymbol(data, i, currLine.Length - currNum.Length))
+        {
+            sum += int.Parse(currNum);
+        }
     }
+
+    System.Console.WriteLine(sum);
+}
+
+private bool IsAdjacentToSymbol(string[] data, int line, int index)
+{
+    // Check the current, previous, and next lines
+    for (int i = -1; i <= 1; i++)
+    {
+        int checkLine = line + i;
+        if (checkLine < 0 || checkLine >= data.Length) continue;
+
+        // Check the left, right, and current positions
+        for (int j = -1; j <= 1; j++)
+        {
+            int checkIndex = index + j;
+            if (checkIndex < 0 || checkIndex >= data[checkLine].Length) continue;
+
+            char checkChar = data[checkLine][checkIndex];
+            if (checkChar != '.' && !char.IsDigit(checkChar))
+            {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 }
