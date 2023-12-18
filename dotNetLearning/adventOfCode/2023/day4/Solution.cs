@@ -2,7 +2,7 @@ public class AdventDayFour
 {
     public string[] GetData()
     {
-        string filepath = "./adventOfCode/2023/day4/data.txt";
+        string filepath = "./adventOfCode/2023/day4/testData.txt";
         string[] result = {};
 
         try
@@ -55,4 +55,52 @@ public class AdventDayFour
 
         return result;
     }
+
+    public void CalculatePartTwo(string[] data)
+    {
+        Dictionary<string, string> matchingCardsCount = new Dictionary<string, string>();
+
+        int[][][] dataArr =  ConvertDataToArray(data);
+
+        Console.WriteLine(String.Join(" ", dataArr[0][0]));
+        Console.WriteLine(String.Join(" ", dataArr[0][1]));
+    }
+
+    public int[][][] ConvertDataToArray(string[] data)
+    {
+            int[][][] result = new int[data.Length][][];
+
+            for (int i = 0; i < data.Length; i++)
+            {
+                var res = data[i].Split(new string[] { " | " }, StringSplitOptions.None);
+                string[] firstPart = res[0].Split(':');
+                string[] firstNumbers = firstPart[1].Trim().Split(' ');
+                string[] secondNumbers = res[1].Trim().Split(' ');
+
+                int[] first = new int[firstNumbers.Length];
+                int[] second = new int[secondNumbers.Length];
+
+                for (int j = 0; j < firstNumbers.Length; j++)
+                {
+                    if (firstNumbers[j] != "")
+                    {
+                        first[j] = int.Parse(firstNumbers[j]);
+                    }
+                }
+
+                for (int j = 0; j < secondNumbers.Length; j++)
+                {
+                    if (secondNumbers[j] != "")
+                    {
+                        second[j] = int.Parse(secondNumbers[j]);
+                    }
+                }
+
+                result[i] = new int[][] { first, second };
+            }
+
+            return result;
+    }
+
+
 }

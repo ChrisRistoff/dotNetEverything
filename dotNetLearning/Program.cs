@@ -78,6 +78,7 @@ class Program
     {
         var advent = new AdventDayFour();
         string[] data = advent.GetData();
-        Console.WriteLine(advent.Calculate(data));
+        // Console.WriteLine(advent.Calculate(data));
+        advent.CalculatePartTwo(data);
     }
 }
