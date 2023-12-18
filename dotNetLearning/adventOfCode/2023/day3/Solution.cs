@@ -2,7 +2,7 @@ public class AdventDayThree
 {
     public string[] GetData()
     {
-        string filepath = "./adventOfCode/2023/day3/testData.txt";
+        string filepath = "./adventOfCode/2023/day3/data.txt";
         string[] result = {};
         string[] lastRemoved = {};
 
@@ -38,7 +38,7 @@ public class AdventDayThree
                 if (char.IsDigit(currLine[j]))
                 {
                     currNum += currLine[j];
-                    if (i == currLine.Length)
+                    if (j == currLine.Length-1)
                     {
                         bool isAdjacentToSymbol = false;
                         int numStart = currLine.Length - currNum.Length;
@@ -140,5 +140,4 @@ public class AdventDayThree
         }
         return false;
     }
-
 }
