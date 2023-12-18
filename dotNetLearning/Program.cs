@@ -1,9 +1,11 @@
+using System.Text;
+
 class Program
 {
 
     static void Main(string[] args)
     {
-        AdventDay3();
+        AdventDay4();
     }
 
     static void testLinkedList()
@@ -70,5 +72,12 @@ class Program
         var advent = new AdventDayThree();
         string[] data = advent.GetData();
         advent.GetSum(data);
+    }
+
+    static void AdventDay4()
+    {
+        var advent = new AdventDayFour();
+        string[] data = advent.GetData();
+        Console.WriteLine(advent.Calculate(data));
     }
 }
