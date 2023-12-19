@@ -2,7 +2,7 @@ public class AdventDayFour
 {
     public string[] GetData()
     {
-        string filepath = "./adventOfCode/2023/day4/testData.txt";
+        string filepath = "./adventOfCode/2023/day4/data.txt";
         string[] result = {};
 
         try
@@ -59,12 +59,11 @@ public class AdventDayFour
     public void CalculatePartTwo(string[] data)
     {
         Dictionary<string, int> matchedCardsCountMap= new Dictionary<string, int>();
-        matchedCardsCountMap.Add("1", 0);
-        matchedCardsCountMap.Add("2", 0);
-        matchedCardsCountMap.Add("3", 0);
-        matchedCardsCountMap.Add("4", 0);
-        matchedCardsCountMap.Add("5", 0);
-        matchedCardsCountMap.Add("6", 0);
+
+        for (int i = 1; i <= data.Length; i++)
+        {
+            matchedCardsCountMap.Add(i.ToString(), 1);
+        }
 
         int[][][] dataArr =  ConvertDataToArray(data);
 
@@ -82,7 +81,7 @@ public class AdventDayFour
             for (int j = 0; j < second.Length; j++)
             {
                 int item = second[j];
-                if (firstSet.Contains(item))
+                if (firstSet.Contains(item) && item != 0)
                 {
                     currCountOfMatchingCards++;
                 }
@@ -90,18 +89,23 @@ public class AdventDayFour
 
             for (int k = currentCard+1; k <= currentCard + currCountOfMatchingCards; k++)
             {
-                if (k < dataArr.Length)
+                if (k <= dataArr.Length)
                 {
-                    matchedCardsCountMap[k.ToString()] += 1;
+                    matchedCardsCountMap[k.ToString()] += matchedCardsCountMap[currentCard.ToString()];
                 }
             }
 
             currCountOfMatchingCards = 0;
         }
+
+        int result = 0;
         foreach (var pair in matchedCardsCountMap)
         {
+            result += pair.Value;
             Console.WriteLine($"[{pair.Key}, {pair.Value}]");
         }
+
+        Console.WriteLine($"Result: {result}");
     }
 
     public int[][][] ConvertDataToArray(string[] data)
