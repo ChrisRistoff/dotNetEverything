@@ -58,12 +58,50 @@ public class AdventDayFour
 
     public void CalculatePartTwo(string[] data)
     {
-        Dictionary<string, string> matchingCardsCount = new Dictionary<string, string>();
+        Dictionary<string, int> matchedCardsCountMap= new Dictionary<string, int>();
+        matchedCardsCountMap.Add("1", 0);
+        matchedCardsCountMap.Add("2", 0);
+        matchedCardsCountMap.Add("3", 0);
+        matchedCardsCountMap.Add("4", 0);
+        matchedCardsCountMap.Add("5", 0);
+        matchedCardsCountMap.Add("6", 0);
 
         int[][][] dataArr =  ConvertDataToArray(data);
 
-        Console.WriteLine(String.Join(" ", dataArr[0][0]));
-        Console.WriteLine(String.Join(" ", dataArr[0][1]));
+        Console.WriteLine(String.Join(" ", dataArr[1][0]));
+        Console.WriteLine(String.Join(" ", dataArr[1][1]));
+
+        for (int i = 0; i < dataArr.Length; i++)
+        {
+            int currentCard = i + 1;
+
+            HashSet<int> firstSet = new HashSet<int>(dataArr[i][0]);
+            int[] second = dataArr[i][1];
+
+            int currCountOfMatchingCards = 0;
+            for (int j = 0; j < second.Length; j++)
+            {
+                int item = second[j];
+                if (firstSet.Contains(item))
+                {
+                    currCountOfMatchingCards++;
+                }
+            }
+
+            for (int k = currentCard+1; k <= currentCard + currCountOfMatchingCards; k++)
+            {
+                if (k < dataArr.Length)
+                {
+                    matchedCardsCountMap[k.ToString()] += 1;
+                }
+            }
+
+            currCountOfMatchingCards = 0;
+        }
+        foreach (var pair in matchedCardsCountMap)
+        {
+            Console.WriteLine($"[{pair.Key}, {pair.Value}]");
+        }
     }
 
     public int[][][] ConvertDataToArray(string[] data)
@@ -101,6 +139,4 @@ public class AdventDayFour
 
             return result;
     }
-
-
 }
