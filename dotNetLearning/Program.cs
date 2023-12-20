@@ -5,7 +5,7 @@ class Program
 
     static void Main(string[] args)
     {
-        AdventDay4();
+        AdventDay5();
     }
 
     static void testLinkedList()
@@ -80,5 +80,11 @@ class Program
         string[] data = advent.GetData();
         // Console.WriteLine(advent.Calculate(data));
         advent.CalculatePartTwo(data);
+    }
+
+    static void AdventDay5()
+    {
+        var advent = new AdventDayFive();
+        string[] data = advent.GetData();
     }
 }

@@ -158,4 +158,55 @@ public class LinkedListMethods
         var linkedList = new LinkedList<int>();
         Assert.Throws<InvalidOperationException>(() => linkedList.ToArray());
     }
+
+    [Fact]
+    public void DeleteByIndex_RemovesItemFromListByIndex()
+    {
+        var linkedList = new LinkedList<int>();
+
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+        linkedList.Append(4);
+
+        Assert.Equal(1, linkedList.deleteByIndex(0));
+        Assert.Equal(2, linkedList.deleteByIndex(0));
+        Assert.Equal(4, linkedList.deleteByIndex(1));
+        Assert.Equal(3, linkedList.deleteByIndex(0));
+        Assert.Equal(0, linkedList.Length);
+        Assert.Null(linkedList.Head);
+        Assert.Null(linkedList.Tail);
+    }
+
+    [Fact]
+    public void DeleteByIndex_ThrowsAnErrorWhenListIsEmpty()
+    {
+        var linkedList = new LinkedList<int>();
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.deleteByIndex(0));
+    }
+
+    [Fact]
+    public void RemoveByIndex_ThrowsAnErrorWhenIndexIsOutOfRange()
+    {
+        var linkedList = new LinkedList<int>();
+
+        linkedList.Append(1);
+        linkedList.Append(2);
+        linkedList.Append(3);
+        linkedList.Append(4);
+
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.deleteByIndex(4));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.deleteByIndex(5));
+        Assert.Throws<IndexOutOfRangeException>(() => linkedList.deleteByIndex(-1));
+    }
+
+    [Fact]
+    public void FromArray_ReturnsAListFromAnArray()
+    {
+        int[] arr = {1, 2, 3, 4};
+        var linkedList = new LinkedList<int>();
+        linkedList.fromArray(arr);
+
+        Assert.Equal("1, 2, 3, 4", linkedList.PrintList());
+    }
 }

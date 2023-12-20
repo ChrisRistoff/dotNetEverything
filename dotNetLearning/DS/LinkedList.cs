@@ -168,4 +168,50 @@ public class LinkedList<T>
 
         return result;
     }
+
+    public void fromArray(T[] arr)
+    {
+        if (arr.Length == 0)
+        {
+            throw new InvalidOperationException("Array is empty");
+        }
+
+        foreach (T item in arr)
+        {
+            this.Append(item);
+        }
+    }
+
+    public T deleteByIndex(int index)
+    {
+        if (index >= this.Length || this.Length == 0)
+        {
+            throw new IndexOutOfRangeException("Index out of range");
+        }
+
+        T deleted;
+
+        if (index == 0)
+        {
+            return this.PopLeft();
+
+        }
+
+        if (index == this.Length - 1)
+        {
+            return this.Pop();
+        }
+
+        Node<T> curr = this.Head!;
+
+        for (int i = 0; i < index - 1; i++)
+        {
+            curr = curr.Next!;
+        }
+
+        deleted = curr.Next!.Data;
+        curr.Next = curr.Next!.Next;
+        Length--;
+        return deleted;
+    }
 }
