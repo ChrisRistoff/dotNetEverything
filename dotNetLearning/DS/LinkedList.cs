@@ -184,12 +184,10 @@ public class LinkedList<T>
 
     public T deleteByIndex(int index)
     {
-        if (index >= this.Length || this.Length == 0)
+        if (index >= this.Length || index < 0)
         {
             throw new IndexOutOfRangeException("Index out of range");
         }
-
-        T deleted;
 
         if (index == 0)
         {
@@ -209,7 +207,7 @@ public class LinkedList<T>
             curr = curr.Next!;
         }
 
-        deleted = curr.Next!.Data;
+        T deleted = curr.Next!.Data;
         curr.Next = curr.Next!.Next;
         Length--;
         return deleted;
