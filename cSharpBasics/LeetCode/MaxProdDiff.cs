@@ -22,7 +22,6 @@ Explanation: We can choose indices 3 and 6 for the first pair (9, 8) and indices
     The product difference is (9 * 8) - (2 * 4) = 64.
 */
 
-
 public class MaximumProductDifference {
     public int MaxProductDifference(int[] nums)
     {

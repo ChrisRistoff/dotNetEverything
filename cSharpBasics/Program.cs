@@ -2,7 +2,7 @@
 {
     static void Main(string[] args)
     {
-        MaxProductDiff();
+        StrictlyIncreasing();
     }
 
     static void ConcatArr()
@@ -23,5 +23,14 @@
         Console.WriteLine(res3 + " Result 3");
 
         // Console.WriteLine(((10 * 9) - (2 * 2)) + " Test Result");
+    }
+
+    static void StrictlyIncreasing()
+    {
+        var strictlyInc = new StrictlyIncreasing();
+
+        Console.WriteLine(strictlyInc.CanBeIncreasing([1,2,10,5,7]));
+        Console.WriteLine(strictlyInc.CanBeIncreasing([2,3,1,2]));
+        Console.WriteLine(strictlyInc.CanBeIncreasing([1,1,1]));
     }
 }
