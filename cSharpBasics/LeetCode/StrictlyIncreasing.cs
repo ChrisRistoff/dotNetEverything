@@ -33,10 +33,7 @@ public class StrictlyIncreasing {
     public bool CanBeIncreasing(int[] nums) {
         for (int i = 0; i < nums.Length; i++)
         {
-            int[] newArray = nums.Where((item, index) =>
-            {
-                return index != i;
-            }).ToArray();
+            int[] newArray = nums.Where((item, index) => index != i).ToArray();
 
             bool isIncreasing = this.CheckIfIncreasing(newArray);
             if (isIncreasing)

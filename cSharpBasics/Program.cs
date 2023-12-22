@@ -2,9 +2,15 @@
 {
     static void Main(string[] args)
     {
-        StrictlyIncreasing();
+        LargestOddNumber();
     }
 
+    static void LargestOddNumber()
+    {
+        var largest = new LargestOddNumberInString();
+
+        Console.WriteLine(largest.LargestOddNumber("35427"));
+    }
     static void ConcatArr()
     {
         var concat = new ConcatArray();
