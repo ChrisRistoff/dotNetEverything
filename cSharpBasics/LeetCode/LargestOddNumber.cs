@@ -1,5 +1,3 @@
-using System.Diagnostics;
-
 public class LargestOddNumberInString {
     public string LargestOddNumber(string num)
     {
