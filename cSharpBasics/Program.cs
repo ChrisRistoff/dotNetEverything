@@ -2,7 +2,15 @@
 {
     static void Main(string[] args)
     {
-        CheckAllNumsInRange();
+        MaxNumberOfWords();
+    }
+
+    static void MaxNumberOfWords()
+    {
+        var maxNumOfWrds = new MaxNumberOfWords();
+        Console.WriteLine(maxNumOfWrds.CanBeTypedWords("hello world", "ad"));
+        Console.WriteLine(maxNumOfWrds.CanBeTypedWords("leet code", "lt"));
+        Console.WriteLine(maxNumOfWrds.CanBeTypedWords("leet code", "e"));
     }
 
     static void CheckAllNumsInRange()
@@ -11,6 +19,7 @@
         Console.WriteLine(check.IsCovered([[1,2],[3,4],[5,6]], 2, 5));
         Console.WriteLine(check.IsCovered([[1,10],[10,20]], 2, 5));
     }
+
     static void LargestOddNumber()
     {
         var largest = new LargestOddNumberInString();
