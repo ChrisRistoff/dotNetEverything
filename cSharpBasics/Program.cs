@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        MaxNumberOfWords();
+        AllOccurrences();
+    }
+
+    static void AllOccurrences()
+    {
+        var occurrences = new CheckOccurrences();
+        Console.WriteLine(occurrences.AreOccurrencesEqual("aabbcc"));
+        Console.WriteLine(occurrences.AreOccurrencesEqual("abbcc"));
     }
 
     static void MaxNumberOfWords()
