@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        MakeAFancyString();
+        CheckStringIsPrefixOfArray();
+    }
+
+    static void CheckStringIsPrefixOfArray()
+    {
+        var isPrefix = new CheckIfStringIsPrefix();
+        Console.WriteLine(isPrefix.IsPrefixString("iloveleetcode", ["i","love","leetcode","apples"]));
+        Console.WriteLine(isPrefix.IsPrefixString("iloveleetcode", ["apples", "i","love","leetcode"]));
     }
 
     static void MakeAFancyString()
