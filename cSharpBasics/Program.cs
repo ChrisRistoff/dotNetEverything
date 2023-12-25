@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        CheckStringIsPrefixOfArray();
+        GetNumOfSubstrings();
+    }
+
+    static void GetNumOfSubstrings()
+    {
+        var substrings = new NumOfSubstrings();
+        Console.WriteLine(substrings.NumOfStrings(["a","abc","bc","d"], "abc"));
+        Console.WriteLine(substrings.NumOfStrings(["a","b","c"], "aaaaabbbbb"));
     }
 
     static void CheckStringIsPrefixOfArray()
