@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        AllOccurrences();
+        SumOfDigitsAfterConvert();
+    }
+
+    static void SumOfDigitsAfterConvert()
+    {
+        var sumOfDigits = new SumOfDigitsAfterConvert();
+        Console.WriteLine(sumOfDigits.GetLucky("leetcode", 2));
+        Console.WriteLine(sumOfDigits.GetLucky("iiii", 1));
     }
 
     static void AllOccurrences()
