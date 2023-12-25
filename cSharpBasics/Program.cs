@@ -2,7 +2,16 @@
 {
     static void Main(string[] args)
     {
-        SumOfDigitsAfterConvert();
+        NumberHasThreeDivisors();
+    }
+
+    static void NumberHasThreeDivisors()
+    {
+        var threeDivisors = new ThreeDivisors();
+        Console.WriteLine(threeDivisors.IsThree(2));
+        Console.WriteLine(threeDivisors.IsThree(4));
+        Console.WriteLine(threeDivisors.IsThree(5));
+        Console.WriteLine(threeDivisors.IsThree(12));
     }
 
     static void SumOfDigitsAfterConvert()
