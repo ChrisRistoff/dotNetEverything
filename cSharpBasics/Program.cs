@@ -2,7 +2,15 @@
 {
     static void Main(string[] args)
     {
-        NumberHasThreeDivisors();
+        MakeAFancyString();
+    }
+
+    static void MakeAFancyString()
+    {
+        var fancyString = new FancyString();
+        Console.WriteLine(fancyString.MakeFancyString("leeetcode"));
+        Console.WriteLine(fancyString.MakeFancyString("aaabaaaa"));
+        Console.WriteLine(fancyString.MakeFancyString("aab"));
     }
 
     static void NumberHasThreeDivisors()
