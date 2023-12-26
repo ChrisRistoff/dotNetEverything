@@ -28,51 +28,24 @@ Explanation: There are six ways to pick score(s) of two students:
     The minimum possible difference is 2.
 */
 
-using System.Runtime.InteropServices.JavaScript;
-
 public class MinDiffHighestLowest {
     public int MinimumDifference(int[] nums, int k)
     {
-        List<int> indexes = new List<int>();
-        List<int> maxNumbers = new List<int>();
+        List<int> sortedNums = nums.ToList();
+        sortedNums.Sort();
 
-        for (int i = 0; i < k; i++)
+        int length = nums.Length;
+        int min = int.MaxValue;
+        for (int i = 0; i + k - 1 < length ; i++)
         {
-            int[] data = FindNextHighest(nums, indexes);
+            int nextIndex = i + k - 1;
+            if (nextIndex > length) nextIndex = k - length;
 
-            maxNumbers.Add(data[0]);
-            indexes.Add(data[1]);
+            int currentDiff = sortedNums[nextIndex] - sortedNums[i];
+            if (currentDiff < min) min = currentDiff;
         }
 
-        Console.WriteLine(string.Join(", ", maxNumbers));
-
-        if (maxNumbers.Count == 1)
-        {
-            return 0;
-        }
-
-        int result = maxNumbers[0];
-        for (int i = 1; i < maxNumbers.Count; i++)
-        {
-            result -= maxNumbers[i];
-        }
-
-        return result;
+        return min;
     }
 
-    private int[] FindNextHighest(int[] numsArr, List<int> indexes)
-    {
-        int max = 0;
-        int newIndex = numsArr.Length;
-        for (int i = 0; i < numsArr.Length; i++)
-        {
-            if (numsArr[i] > max && !indexes.Contains(i))
-            {
-                max = numsArr[i];
-                newIndex = i;
-            }
-        }
-
-        return new int[]{max, newIndex};
-    }
 }
