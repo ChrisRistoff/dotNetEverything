@@ -2,7 +2,15 @@
 {
     static void Main(string[] args)
     {
-        GetNumOfSubstrings();
+        MinDiff();
+    }
+
+    static void MinDiff()
+    {
+        var minDiff = new MinDiffHighestLowest();
+        Console.WriteLine(minDiff.MinimumDifference([90], 1));
+        Console.WriteLine(minDiff.MinimumDifference([9, 4, 1, 7], 2));
+        Console.WriteLine(minDiff.MinimumDifference([87063,61094,44530,21297,95857,93551,9918], 6));
     }
 
     static void GetNumOfSubstrings()
