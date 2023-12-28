@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        MinDiff();
+        ReverseWordPrefix();
+    }
+
+    static void ReverseWordPrefix()
+    {
+        var reverse = new ReversePrefixOfWord();
+
+        Console.WriteLine(reverse.ReversePrefix("abcdefd", 'd'));
     }
 
     static void MinDiff()
