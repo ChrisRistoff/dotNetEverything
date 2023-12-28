@@ -51,4 +51,28 @@ public class PairsWithAbsDifference{
 
         return count;
     }
+
+    public int CountKDifference2(int[] nums, int k)
+    {
+        var numFrequency = new Dictionary<int, int>();
+        int count = 0;
+
+        foreach (int num in nums) {
+            if (numFrequency.ContainsKey(num - k)) {
+                count += numFrequency[num - k];
+            }
+
+            if (numFrequency.ContainsKey(num + k)) {
+                count += numFrequency[num + k];
+            }
+
+            if (numFrequency.ContainsKey(num)) {
+                numFrequency[num]++;
+            } else {
+                numFrequency[num] = 1;
+            }
+        }
+
+        return count;
+    }
 }
