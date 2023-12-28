@@ -2,7 +2,16 @@
 {
     static void Main(string[] args)
     {
-        ReverseWordPrefix();
+        PairsWithAbsDifference();
+    }
+
+    static void PairsWithAbsDifference()
+    {
+        var absDiff = new PairsWithAbsDifference();
+
+        Console.WriteLine(absDiff.CountKDifference([1,2,2,1], 1));
+        Console.WriteLine(absDiff.CountKDifference([1,3], 3));
+        Console.WriteLine(absDiff.CountKDifference([3,2,1,5,4], 2));
     }
 
     static void ReverseWordPrefix()
