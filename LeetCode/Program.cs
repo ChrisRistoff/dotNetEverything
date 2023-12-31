@@ -2,7 +2,15 @@
 {
     static void Main(string[] args)
     {
-        PairsWithAbsDifference();
+        PerformingOperationsOnAVariable();
+    }
+
+    static void PerformingOperationsOnAVariable()
+    {
+        var operations = new ValueAfterOperations();
+
+        Console.WriteLine(operations.FinalValueAfterOperations(new string[] {"--X","X++","X++"}));
+        Console.WriteLine(operations.FinalValueAfterOperations(new []{"x--", "++x", "X--", "X++"}));
     }
 
     static void PairsWithAbsDifference()
