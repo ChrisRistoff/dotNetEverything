@@ -42,4 +42,23 @@ public class MaxDiffBetweenElements{
         }
         return result;
     }
+
+    // faster solution
+    public int MaximumDifference2(int[] nums)
+    {
+        int result = -1;
+        int min = nums[0];
+        for (int i = 1; i < nums.Length; i++)
+        {
+            if (nums[i] > min)
+            {
+                result = Math.Max(result, nums[i] - min);
+            }
+            else
+            {
+                min = nums[i];
+            }
+        }
+        return result;
+    }
 }
