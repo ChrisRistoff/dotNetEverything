@@ -2,7 +2,14 @@
 {
     static void Main(string[] args)
     {
-        PerformingOperationsOnAVariable();
+        MaxDiffBetweenTwoElements();
+    }
+
+    static void MaxDiffBetweenTwoElements()
+    {
+        var maxDiff = new MaxDiffBetweenElements();
+
+        Console.WriteLine(maxDiff.MaximumDifference([7,1,5,4]));
     }
 
     static void PerformingOperationsOnAVariable()
