@@ -24,6 +24,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\dotNetLearning\dotnetLearning.csproj" />
+    <ProjectReference Include="..\LeetCode\LeetCode.csproj" />
+    <ProjectReference Include="..\AdventOfCode\AdventOfCode.csproj" />
+    <ProjectReference Include="..\DataStructures\DataStructures.csproj" />
   </ItemGroup>
 
 </Project>
