@@ -19,6 +19,4 @@ public class AdventDayFive
 
         return result;
     }
-
-    public void 
 }
