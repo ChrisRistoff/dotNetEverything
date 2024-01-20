@@ -23,7 +23,7 @@ Explanation: The array ans is formed as follows:
         - ans = [1,3,2,1,1,3,2,1]
 */
 
-public class ConcatArray
+public class ContatenationOfArraySolution
 {
     public int[] GetConcat(int[] nums)
     {

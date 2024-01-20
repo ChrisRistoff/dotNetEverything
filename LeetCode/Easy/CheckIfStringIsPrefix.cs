@@ -23,7 +23,7 @@ It is impossible to make s using a prefix of arr.
 
 using System.Text;
 
-public class CheckIfStringIsPrefix {
+public class CheckIfStringIsPrefixSolution {
     public bool IsPrefixString(string s, string[] words)
     {
         StringBuilder currentString = new StringBuilder();

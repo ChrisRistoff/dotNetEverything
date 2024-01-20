@@ -1,3 +1,5 @@
+namespace LeetCode.Easy;
+
 public class CheckRange{
     public bool IsCovered(int[][] ranges, int left, int right) {
 
