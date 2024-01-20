@@ -18,6 +18,8 @@ Explanation: The characters that appear in s are 'a' and 'b'.
 'a' occurs 3 times while 'b' occurs 2 times, which is not the same number of times.
 */
 
+namespace LeetCode.Easy;
+
 public class CheckOccurrences{
     public bool AreOccurrencesEqual(string s) {
         Dictionary<string, int> letterCounts = new Dictionary<string, int>();
