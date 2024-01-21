@@ -17,7 +17,7 @@ Output: true
 Explantion: 4 has three divisors: 1, 2, and 4.
 */
 
-public class ThreeDivisors {
+public class ThreeDivisorsSolution {
     public bool IsThree(int n) {
         int count = 0;
         for (int i = 1; i <= n; i++)

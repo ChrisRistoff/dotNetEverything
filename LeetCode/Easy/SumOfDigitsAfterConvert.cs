@@ -34,7 +34,7 @@ Input: s = "zbax", k = 2
 Output: 8
 */
 
-public class SumOfDigitsAfterConvert {
+public class SumOfDigitsAfterConvertSolution {
     public int GetLucky(string s, int k) {
         string numString = "";
 
