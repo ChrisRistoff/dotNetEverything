@@ -31,7 +31,7 @@ Explanation: No three consecutive characters are equal, so return "aab".
 
 using System.Text;
 
-public class FancyString {
+public class MakeFancyStringSolution{
     public string MakeFancyString(string s) {
 
         char prev = ' ';
