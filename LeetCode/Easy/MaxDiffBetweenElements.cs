@@ -26,7 +26,7 @@ Explanation:
 The maximum difference occurs with i = 0 and j = 3, nums[j] - nums[i] = 10 - 1 = 9.
 */
 
-public class MaxDiffBetweenElements{
+public class MaxDiffBetweenElementsSolution{
     public int MaximumDifference(int[] nums)
     {
         int result = -1;
