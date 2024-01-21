@@ -1,4 +1,4 @@
-public class MaxNumberOfWords{
+public class MaxNumberOfWordsSolution{
     public int CanBeTypedWords(string text, string brokenLetters)
     {
         string[] wordsArr = text.Split(" ");
