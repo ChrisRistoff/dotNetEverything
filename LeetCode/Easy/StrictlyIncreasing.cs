@@ -29,7 +29,7 @@ Explanation: The result of removing any element is [1,1].
 [1,1] is not strictly increasing, so return false.
 */
 
-public class StrictlyIncreasing {
+public class StrictlyIncreasingSolution {
     public bool CanBeIncreasing(int[] nums) {
         for (int i = 0; i < nums.Length; i++)
         {
