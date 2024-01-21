@@ -1,3 +1,5 @@
+namespace LeetCode.Easy;
+
 public class LargestOddNumberInString {
     public string LargestOddNumber(string num)
     {
