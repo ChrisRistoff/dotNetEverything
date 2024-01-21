@@ -39,7 +39,7 @@ Initially, X = 0.
     X--: X is decremented by 1, X = 1 - 1 = 0.
 */
 
-public class ValueAfterOperations {
+public class PerformingOperationsSolution {
     public int FinalValueAfterOperations(string[] operations) {
 
         int result = 0;

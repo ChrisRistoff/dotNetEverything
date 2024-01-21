@@ -31,7 +31,7 @@ Output: 3
 Explanation: Each of the patterns appears as a substring in word "ab".
 */
 
-public class NumOfSubstrings {
+public class NumOfSubstringsSolution {
     public int NumOfStrings(string[] patterns, string word) {
         int count = 0;
         for (int i = 0; i < patterns.Length; i++)

@@ -31,7 +31,7 @@ Explanation: The pairs with an absolute difference of 2 are:
     - [3,2,1,5,4]
 */
 
-public class PairsWithAbsDifference{
+public class PairsWithAbsDifferenceSolution{
     public int CountKDifference(int[] nums, int k) {
 
         int count = 0;

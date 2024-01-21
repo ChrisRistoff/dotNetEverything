@@ -28,7 +28,7 @@ Explanation: "z" does not exist in word.
 
 using System.Text;
 
-public class ReversePrefixOfWord{
+public class ReversePrefixOfWordSolution {
     public string ReversePrefix(string word, char ch) {
         int index = word.IndexOf(ch);
 

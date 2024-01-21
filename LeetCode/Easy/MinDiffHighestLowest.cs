@@ -28,7 +28,7 @@ Explanation: There are six ways to pick score(s) of two students:
     The minimum possible difference is 2.
 */
 
-public class MinDiffHighestLowest {
+public class MinDiffHighestLowestSolution {
     public int MinimumDifference(int[] nums, int k)
     {
         List<int> sortedNums = nums.ToList();
