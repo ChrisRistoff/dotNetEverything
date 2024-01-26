@@ -1,54 +1,56 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
 public class MaxNumberOfWrodsTests
 {
+    private readonly MaxNumberOfWordsSolution _solution = new();
+
     [Fact]
     public void MaxNumberOfWordsTest1()
     {
-        var text = "hello world";
-        var brokenLetters = "ad";
-        var expected = 1;
-        var actual = new MaxNumberOfWordsSolution().CanBeTypedWords(text, brokenLetters);
+        string text = "hello world";
+        string brokenLetters = "ad";
+        int expected = 1;
+        int actual = _solution.CanBeTypedWords(text, brokenLetters);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxNumberOfWordsTest2()
     {
-        var text = "leet code";
-        var brokenLetters = "lt";
-        var expected = 1;
-        var actual = new MaxNumberOfWordsSolution().CanBeTypedWords(text, brokenLetters);
+        string text = "leet code";
+        string brokenLetters = "lt";
+        int expected = 1;
+        int actual = _solution.CanBeTypedWords(text, brokenLetters);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxNumberOfWordsTest3()
     {
-        var text = "leet code";
-        var brokenLetters = "e";
-        var expected = 0;
-        var actual = new MaxNumberOfWordsSolution().CanBeTypedWords(text, brokenLetters);
+        string text = "leet code";
+        string brokenLetters = "e";
+        int expected = 0;
+        int actual = _solution.CanBeTypedWords(text, brokenLetters);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxNumberOfWordsTest4()
     {
-        var text = "hello world";
-        var brokenLetters = "ad";
-        var expected = 1;
-        var actual = new MaxNumberOfWordsSolution().CanBeTypedWords(text, brokenLetters);
+        string text = "hello world";
+        string brokenLetters = "ad";
+        int expected = 1;
+        int actual = _solution.CanBeTypedWords(text, brokenLetters);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxNumberOfWordsTest5()
     {
-        var text = "leet code";
-        var brokenLetters = "lt";
-        var expected = 1;
-        var actual = new MaxNumberOfWordsSolution().CanBeTypedWords(text, brokenLetters);
+        string text = "leet code";
+        string brokenLetters = "lt";
+        int expected = 1;
+        int actual = _solution.CanBeTypedWords(text, brokenLetters);
         Assert.Equal(expected, actual);
     }
 }

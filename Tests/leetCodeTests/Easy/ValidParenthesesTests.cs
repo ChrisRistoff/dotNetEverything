@@ -7,45 +7,45 @@ public class ValidParenthesesTests
     [Fact]
     public void ValidParenthesesTest1()
     {
-        var input = "()";
-        var expected = true;
-        var actual = _solution.IsValid(input);
+        string input = "()";
+        bool expected = true;
+        bool actual = _solution.IsValid(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void ValidParenthesesTest2()
     {
-        var input = "()[]{}";
-        var expected = true;
-        var actual = _solution.IsValid(input);
+        string input = "()[]{}";
+        bool expected = true;
+        bool actual = _solution.IsValid(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void ValidParenthesesTest3()
     {
-        var input = "(]";
-        var expected = false;
-        var actual = _solution.IsValid(input);
+        string input = "(]";
+        bool expected = false;
+        bool actual = _solution.IsValid(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void ValidParenthesesTest4()
     {
-        var input = "([)]";
-        var expected = false;
-        var actual = _solution.IsValid(input);
+        string input = "([)]";
+        bool expected = false;
+        bool actual = _solution.IsValid(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void ValidParenthesesTest5()
     {
-        var input = "{[]}";
-        var expected = true;
-        var actual = _solution.IsValid(input);
+        string input = "{[]}";
+        bool expected = true;
+        bool actual = _solution.IsValid(input);
         Assert.Equal(expected, actual);
     }
 }

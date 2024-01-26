@@ -1,49 +1,51 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
-public class MakeFancyStringTests()
+public class MakeFancyStringTests
 {
+    private readonly MakeFancyStringSolution _solution = new();
+
     [Fact]
     public void MakeFancyStringTest1()
     {
-        var s = "leeetcode";
-        var expected = "leetcode";
-        var actual = new MakeFancyStringSolution().MakeFancyString(s);
+        string s = "leeetcode";
+        string expected = "leetcode";
+        string actual = _solution.MakeFancyString(s);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MakeFancyStringTest2()
     {
-        var s = "aaabaaaa";
-        var expected = "aabaa";
-        var actual = new MakeFancyStringSolution().MakeFancyString(s);
+        string s = "aaabaaaa";
+        string expected = "aabaa";
+        string actual = _solution.MakeFancyString(s);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MakeFancyStringTest3()
     {
-        var s = "aab";
-        var expected = "aab";
-        var actual = new MakeFancyStringSolution().MakeFancyString(s);
+        string s = "aab";
+        string expected = "aab";
+        string actual = _solution.MakeFancyString(s);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MakeFancyStringTest4()
     {
-        var s = "a";
-        var expected = "a";
-        var actual = new MakeFancyStringSolution().MakeFancyString(s);
+        string s = "a";
+        string expected = "a";
+        string actual = _solution.MakeFancyString(s);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MakeFancyStringTest5()
     {
-        var s = "aa";
-        var expected = "aa";
-        var actual = new MakeFancyStringSolution().MakeFancyString(s);
+        string s = "aa";
+        string expected = "aa";
+        string actual = _solution.MakeFancyString(s);
         Assert.Equal(expected, actual);
     }
 }

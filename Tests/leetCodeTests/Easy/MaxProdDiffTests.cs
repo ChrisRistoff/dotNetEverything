@@ -1,40 +1,42 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
 public class MaxProductDifferenceTests
 {
+    private readonly MaximumProductDifferenceSolution _solution = new();
+
     [Fact]
     public void MaxProductDifferenceTest1()
     {
-        var nums = new int[] { 5, 6, 2, 7, 4 };
-        var expected = 34;
-        var actual = new MaximumProductDifferenceSolution().MaxProductDifference(nums);
+        int[] nums = [5, 6, 2, 7, 4];
+        int expected = 34;
+        int actual = _solution.MaxProductDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxProductDifferenceTest2()
     {
-        var nums = new int[] { 4, 2, 5, 9, 7, 4, 8 };
-        var expected = 64;
-        var actual = new MaximumProductDifferenceSolution().MaxProductDifference(nums);
+        int[] nums = [4, 2, 5, 9, 7, 4, 8];
+        int expected = 64;
+        int actual = _solution.MaxProductDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxProductDifferenceTest3()
     {
-        var nums = new int[] { 1, 5, 4, 5 };
-        var expected = 21;
-        var actual = new MaximumProductDifferenceSolution().MaxProductDifference(nums);
+        int[] nums = [1, 5, 4, 5];
+        int expected = 21;
+        int actual = _solution.MaxProductDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxProductDifferenceTest4()
     {
-        var nums = new int[] { 4, 4 };
-        var expected = 0;
-        var actual = new MaximumProductDifferenceSolution().MaxProductDifference(nums);
+        int[] nums = [4, 4];
+        int expected = 0;
+        int actual = _solution.MaxProductDifference(nums);
         Assert.Equal(expected, actual);
     }
 }

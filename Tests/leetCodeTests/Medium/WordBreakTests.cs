@@ -37,18 +37,18 @@ public class WordBreakTests
     [Fact]
     public void WordBreakTest4()
     {
-        var s = "catsandog";
-        var wordDict = new[] {"cats", "dog", "sand", "and", "cat"};
-        var expected = false;
-        var actual = _solution.WordBreak(s, wordDict);
+        string s = "catsandog";
+        List<string> wordDict = new() {"cats", "dog", "sand", "and", "cat"};
+        bool expected = false;
+        bool actual = _solution.WordBreak(s, wordDict);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void WordBreakTest5()
     {
-        var s = "catsandog";
-        var wordDict = new[] {"cats", "dog", "sand", "and", "cat"};
+        string s = "catsandog";
+        List<string> wordDict = new() {"cats", "dog", "sand", "and", "cat"};
         var expected = false;
         var actual = _solution.WordBreak(s, wordDict);
         Assert.Equal(expected, actual);
@@ -58,7 +58,7 @@ public class WordBreakTests
     public void WordBreakTest6()
     {
         string s = "a";
-        List<string> wordDict = new List<string>() { "a" };
+        List<string> wordDict = new() { "a" };
         bool expected = true;
         bool actual = _solution.WordBreak(s, wordDict);
         Assert.Equal(expected, actual);
@@ -68,7 +68,7 @@ public class WordBreakTests
     public void WordBreakTest7()
     {
         string s = "ab";
-        List<string> wordDict = new List<string>() { "a", "b" };
+        List<string> wordDict = new() { "a", "b" };
         bool expected = true;
         bool actual = _solution.WordBreak(s, wordDict);
         Assert.Equal(expected, actual);
