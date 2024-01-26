@@ -39,11 +39,6 @@ public class MaximumProductDifferenceSolution {
 
         int secondMin = this.FindSecondMin(nums, max, indexOfMin);
 
-        Console.WriteLine(max);
-        Console.WriteLine(secondMax);
-        Console.WriteLine(min);
-        Console.WriteLine(secondMin);
-
         return (max * secondMax) - (min * secondMin);
     }
 
