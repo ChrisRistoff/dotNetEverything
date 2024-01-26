@@ -1,49 +1,51 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
 public class MaxDiffBetweenElementsTests
 {
+    private readonly MaxDiffBetweenElementsSolution _solution = new();
+
     [Fact]
     public void MaxDiffBetweenElementsTest1()
     {
-        var nums = new int[] { 7, 1, 5, 4 };
-        var expected = 4;
-        var actual = new MaxDiffBetweenElementsSolution().MaximumDifference(nums);
+        int[] nums = [7, 1, 5, 4];
+        int expected = 4;
+        int actual = _solution.MaximumDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxDiffBetweenElementsTest2()
     {
-        var nums = new int[] { 9, 4, 3, 2 };
-        var expected = -1;
-        var actual = new MaxDiffBetweenElementsSolution().MaximumDifference(nums);
+        int[] nums = [9, 4, 3, 2];
+        int expected = -1;
+        int actual = _solution.MaximumDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxDiffBetweenElementsTest3()
     {
-        var nums = new int[] { 1, 5, 2, 10 };
-        var expected = 9;
-        var actual = new MaxDiffBetweenElementsSolution().MaximumDifference(nums);
+        int[] nums = [1, 5, 2, 10];
+        int expected = 9;
+        int actual = _solution.MaximumDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxDiffBetweenElementsTest4()
     {
-        var nums = new int[] { 1, 2, 3, 4, 5 };
-        var expected = 4;
-        var actual = new MaxDiffBetweenElementsSolution().MaximumDifference(nums);
+        int[] nums = [1, 2, 3, 4, 5];
+        int expected = 4;
+        int actual = _solution.MaximumDifference(nums);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MaxDiffBetweenElementsTest5()
     {
-        var nums = new int[] { 5, 4, 3, 2, 1 };
-        var expected = -1;
-        var actual = new MaxDiffBetweenElementsSolution().MaximumDifference(nums);
+        int[] nums = [5, 4, 3, 2, 1];
+        int expected = -1;
+        int actual = _solution.MaximumDifference(nums);
         Assert.Equal(expected, actual);
     }
 }

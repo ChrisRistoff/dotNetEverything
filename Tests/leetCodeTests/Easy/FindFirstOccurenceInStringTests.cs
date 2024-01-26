@@ -1,5 +1,7 @@
 using LeetCode.Easy;
 
+namespace Tests.leetCodeTests.Easy;
+
 public class FindFirstOccurenceInStringTests
 {
     private readonly FindFirstOccurenceInStringSolution _solution = new();

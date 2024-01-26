@@ -1,44 +1,46 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
 public class MinDiffHighestLowestTests
 {
+    private readonly MinDiffHighestLowestSolution _solution = new();
+
     [Fact]
     public void MinDiffHighestLowestTest1()
     {
-        var nums = new int[] { 90 };
-        var k = 1;
-        var expected = 0;
-        var actual = new MinDiffHighestLowestSolution().MinimumDifference(nums, k);
+        int[] nums = [90];
+        int k = 1;
+        int expected = 0;
+        int actual = _solution.MinimumDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MinDiffHighestLowestTest2()
     {
-        var nums = new int[] { 9, 4, 1, 7 };
-        var k = 2;
-        var expected = 2;
-        var actual = new MinDiffHighestLowestSolution().MinimumDifference(nums, k);
+        int[] nums = [9, 4, 1, 7];
+        int k = 2;
+        int expected = 2;
+        int actual = _solution.MinimumDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MinDiffHighestLowestTest3()
     {
-        var nums = new int[] { 9, 4, 1, 7 };
-        var k = 3;
-        var expected = 5;
-        var actual = new MinDiffHighestLowestSolution().MinimumDifference(nums, k);
+        int[] nums = [9, 4, 1, 7];
+        int k = 3;
+        int expected = 5;
+        int actual = _solution.MinimumDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void MinDiffHighestLowestTest4()
     {
-        var nums = new int[] { 9, 4, 1, 7 };
-        var k = 4;
-        var expected = 8;
-        var actual = new MinDiffHighestLowestSolution().MinimumDifference(nums, k);
+        int[] nums = [9, 4, 1, 7];
+        int k = 4;
+        int expected = 8;
+        int actual = _solution.MinimumDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 }

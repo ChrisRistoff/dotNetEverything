@@ -1,44 +1,46 @@
-using LeetCode.Easy;
+namespace Tests.leetCodeTests.Easy;
 
 public class PairsWithAbsDifferenceTests
 {
+    private readonly PairsWithAbsDifferenceSolution _solution = new();
+
     [Fact]
     public void PairsWithAbsDifferenceTest1()
     {
-        var nums = new int[] { 1, 2, 2, 1 };
-        var k = 1;
-        var expected = 4;
-        var actual = new PairsWithAbsDifferenceSolution().CountKDifference(nums, k);
+        int[] nums = [1, 2, 2, 1];
+        int k = 1;
+        int expected = 4;
+        int actual = _solution.CountKDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PairsWithAbsDifferenceTest2()
     {
-        var nums = new int[] { 1, 3 };
-        var k = 3;
-        var expected = 0;
-        var actual = new PairsWithAbsDifferenceSolution().CountKDifference(nums, k);
+        int[] nums = [1, 3];
+        int k = 3;
+        int expected = 0;
+        int actual = _solution.CountKDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PairsWithAbsDifferenceTest3()
     {
-        var nums = new int[] { 3, 2, 1, 5, 4 };
-        var k = 2;
-        var expected = 3;
-        var actual = new PairsWithAbsDifferenceSolution().CountKDifference(nums, k);
+        int[] nums = [3, 2, 1, 5, 4];
+        int k = 2;
+        int expected = 3;
+        int actual = _solution.CountKDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PairsWithAbsDifferenceTest4()
     {
-        var nums = new int[] { 1, 2, 3, 4, 5 };
-        var k = 1;
-        var expected = 4;
-        var actual = new PairsWithAbsDifferenceSolution().CountKDifference(nums, k);
+        int[] nums = [1, 2, 3, 4, 5];
+        int k = 1;
+        int expected = 4;
+        int actual = _solution.CountKDifference(nums, k);
         Assert.Equal(expected, actual);
     }
 }

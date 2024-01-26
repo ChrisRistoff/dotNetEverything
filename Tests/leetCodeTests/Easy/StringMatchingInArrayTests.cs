@@ -7,36 +7,36 @@ public class StringMatchingInArrayTests
     [Fact]
     public void StringMatchingInArrayTest1()
     {
-        var words = new string[] { "mass", "as", "hero", "superhero" };
-        var expected = new string[] { "as", "hero" };
-        var actual = _solution.StringMatching(words);
+        string[] words = ["mass", "as", "hero", "superhero"];
+        string[] expected = ["as", "hero"];
+        IList<string> actual = _solution.StringMatching(words);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void StringMatchingInArrayTest2()
     {
-        var words = new string[] { "leetcode", "et", "code" };
-        var expected = new string[] { "et", "code" };
-        var actual = _solution.StringMatching(words);
+        string[] words = ["leetcode", "et", "code"];
+        string[] expected = ["et", "code"];
+        IList<string> actual = _solution.StringMatching(words);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void StringMatchingInArrayTest3()
     {
-        var words = new string[] { "blue", "green", "bu" };
-        var expected = new string[] { };
-        var actual = _solution.StringMatching(words);
+        string[] words = ["blue", "green", "bu"];
+        string[] expected = [];
+        IList<string> actual = _solution.StringMatching(words);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void StringMatchingInArrayTest4()
     {
-        var words = new string[] { "leetcoder", "leetcode", "od", "hamlet", "am" };
-        var expected = new string[] { "leetcode", "od", "am" };
-        var actual = _solution.StringMatching(words);
+        string[] words = ["leetcoder", "leetcode", "od", "hamlet", "am"];
+        string[] expected = ["leetcode", "od", "am"];
+        IList<string> actual = _solution.StringMatching(words);
         Assert.Equal(expected, actual);
     }
 }

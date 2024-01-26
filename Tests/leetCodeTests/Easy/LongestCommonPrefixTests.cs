@@ -1,5 +1,7 @@
 using LeetCode.Easy;
 
+namespace Tests.leetCodeTests.Easy;
+
 public class LongestCommonPrefixTests
 {
     private readonly LongestCommonPrefixSolution _solution = new();
@@ -7,72 +9,72 @@ public class LongestCommonPrefixTests
     [Fact]
     public void LongestCommonPrefixTest1()
     {
-        var input = new[] {"flower", "flow", "flight"};
-        var expected = "fl";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["flower", "flow", "flight"];
+        string expected = "fl";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest2()
     {
-        var input = new[] {"dog", "racecar", "car"};
-        var expected = "";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["dog", "racecar", "car"];
+        string expected = "";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest3()
     {
-        var input = new[] {"ab", "a"};
-        var expected = "a";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["ab", "a"];
+        string expected = "a";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest4()
     {
-        var input = new[] {"a"};
-        var expected = "a";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["a"];
+        string expected = "a";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest5()
     {
-        var input = new[] {"flower", "flower", "flower", "flower"};
-        var expected = "flower";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["flower", "flower", "flower", "flower"];
+        string expected = "flower";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest6()
     {
-        var input = new[] {"flowser", "flowder", "flowger", "flowzer", "flowers"};
-        var expected = "flow";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["flowser", "flowder", "flowger", "flowzer", "flowers"];
+        string expected = "flow";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest7()
     {
-        var input = new[] {"", "b"};
-        var expected = "";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["", "b"];
+        string expected = "";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void LongestCommonPrefixTest8()
     {
-        var input = new[] {"", ""};
-        var expected = "";
-        var actual = _solution.LongestCommonPrefix(input);
+        string[] input = ["", ""];
+        string expected = "";
+        string actual = _solution.LongestCommonPrefix(input);
         Assert.Equal(expected, actual);
     }
 }

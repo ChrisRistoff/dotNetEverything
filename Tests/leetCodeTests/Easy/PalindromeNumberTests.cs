@@ -7,54 +7,54 @@ public class PalindromeNumberTests
     [Fact]
     public void PalindromeNumberTest1()
     {
-        var input = 121;
-        var expected = true;
-        var actual = _solution.IsPalindrome(input);
+        int input = 121;
+        bool expected = true;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PalindromeNumberTest2()
     {
-        var input = -121;
-        var expected = false;
-        var actual = _solution.IsPalindrome(input);
+        int input = -121;
+        bool expected = false;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PalindromeNumberTest3()
     {
-        var input = 10;
-        var expected = false;
-        var actual = _solution.IsPalindrome(input);
+        int input = 10;
+        bool expected = false;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PalindromeNumberTest4()
     {
-        var input = -101;
-        var expected = false;
-        var actual = _solution.IsPalindrome(input);
+        int input = -101;
+        bool expected = false;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PalindromeNumberTest5()
     {
-        var input = 0;
-        var expected = true;
-        var actual = _solution.IsPalindrome(input);
+        int input = 0;
+        bool expected = true;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 
     [Fact]
     public void PalindromeNumberTest6()
     {
-        var input = 1000021;
-        var expected = false;
-        var actual = _solution.IsPalindrome(input);
+        int input = 1000021;
+        bool expected = false;
+        bool actual = _solution.IsPalindrome(input);
         Assert.Equal(expected, actual);
     }
 }
