@@ -27,26 +27,26 @@ public class IsomorphicStringsSolution {
             return false;
         }
 
-        Dictionary<char, int> sMap = new();
-        Dictionary<char, int> tMap = new();
+        Dictionary<char, char> sMap = new();
+        Dictionary<char, char> tMap = new();
 
-        for (int i = 0; i < s.Length; i++)
-        {
-            if (sMap.ContainsKey(s[i]) && tMap.ContainsKey(t[i]))
-            {
-                if (sMap[s[i]] != tMap[t[i]])
-                {
+        for (int i = 0; i < s.Length; i++) {
+            if (sMap.ContainsKey(s[i])) {
+                if (sMap[s[i]] != t[i]) {
                     return false;
                 }
             }
-            else if (sMap.ContainsKey(s[i]) || tMap.ContainsKey(t[i]))
-            {
-                return false;
+            else {
+                sMap[s[i]] = t[i];
             }
-            else
-            {
-                sMap[s[i]] = i;
-                tMap[t[i]] = i;
+
+            if (tMap.ContainsKey(t[i])) {
+                if (tMap[t[i]] != s[i]) {
+                    return false;
+                }
+            }
+            else {
+                tMap[t[i]] = s[i];
             }
         }
 
