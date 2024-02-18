@@ -1,5 +1,3 @@
-using LeetCode.Easy;
-
 public class SingleNumberTests
 {
     private readonly SingleNumberSolution _solution = new();
