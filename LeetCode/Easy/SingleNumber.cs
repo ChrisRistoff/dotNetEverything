@@ -19,6 +19,17 @@ Output: 1
 public class SingleNumberSolution {
     public int SingleNumber(int[] nums) {
 
-        return 0;
+        HashSet<int> set = new();
+
+        foreach (int num in nums) {
+            if (set.Contains(num)) {
+                set.Remove(num);
+            }
+            else {
+                set.Add(num);
+            }
+        }
+
+        return set.First();
     }
 }

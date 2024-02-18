@@ -39,4 +39,13 @@ public class SingleNumberTests
         int actual = _solution.SingleNumber(nums);
         Assert.Equal(expected, actual);
     }
+
+    [Fact]
+    public void Example5()
+    {
+        int[] nums = { 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 9, 9 };
+        int expected = 8;
+        int actual = _solution.SingleNumber(nums);
+        Assert.Equal(expected, actual);
+    }
 }
